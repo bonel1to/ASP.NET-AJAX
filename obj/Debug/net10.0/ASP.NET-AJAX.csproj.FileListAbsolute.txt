@@ -95,3 +95,4 @@
 /Users/bonel1to/Repos/ASP.NET-AJAX/obj/Debug/net10.0/ASP.NET-AJAX.pdb
 /Users/bonel1to/Repos/ASP.NET-AJAX/obj/Debug/net10.0/ASP.NET-AJAX.genruntimeconfig.cache
 /Users/bonel1to/Repos/ASP.NET-AJAX/obj/Debug/net10.0/ref/ASP.NET-AJAX.dll
+/Users/bonel1to/Repos/ASP.NET-AJAX/obj/Debug/net10.0/ASP.NET-AJAX.sourcelink.json

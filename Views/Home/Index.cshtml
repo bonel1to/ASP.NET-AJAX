@@ -1,8 +1,72 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model UserModel
+
+@{
+    ViewData["Title"] = "Заявка";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3>Заявка пользователя</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="SubmitApplication" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Phone" class="form-label"></label>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="City" class="form-label"></label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="BirthYear" class="form-label"></label>
+                    <input asp-for="BirthYear" class="form-control" min="1900" max="@ViewBag.CurrentYear" />
+                    <span asp-validation-for="BirthYear" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Education" class="form-label"></label>
+                    <select asp-for="Education" class="form-select">
+                        <option value="">Выберите образование</option>
+                        <option>Среднее</option>
+                        <option>Среднее специальное</option>
+                        <option>Высшее</option>
+                        <option>Неоконченное высшее</option>
+                    </select>
+                    <span asp-validation-for="Education" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Comment" class="form-label"></label>
+                    <textarea asp-for="Comment" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Comment" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

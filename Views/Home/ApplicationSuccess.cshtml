@@ -1,0 +1,59 @@
+@model ApplicationResultModel
+
+@{
+    ViewData["Title"] = "Заявка отправлена";
+}
+
+<div class="container mt-4">
+    <div class="alert alert-success shadow-sm">
+        <h4 class="alert-heading">Заявка успешно заполнена!</h4>
+        <p class="mb-0">Ниже отображается анкета человека, которую вы отправили.</p>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-header bg-success text-white">
+            <h3>Анкета человека</h3>
+        </div>
+        <div class="card-body">
+            <dl class="row mb-0">
+                <dt class="col-sm-3">Имя</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Телефон</dt>
+                <dd class="col-sm-9">@Model.Phone</dd>
+
+                <dt class="col-sm-3">Город</dt>
+                <dd class="col-sm-9">@Model.City</dd>
+
+                <dt class="col-sm-3">Год рождения</dt>
+                <dd class="col-sm-9">@Model.BirthYear</dd>
+
+                <dt class="col-sm-3">Возраст</dt>
+                <dd class="col-sm-9">@Model.Age лет</dd>
+
+                <dt class="col-sm-3">Образование</dt>
+                <dd class="col-sm-9">@Model.Education</dd>
+
+                <dt class="col-sm-3">Комментарий</dt>
+                <dd class="col-sm-9">
+                    @if (string.IsNullOrWhiteSpace(Model.Comment))
+                    {
+                        <span class="text-muted">Не указан</span>
+                    }
+                    else
+                    {
+                        @Model.Comment
+                    }
+                </dd>
+
+                <dt class="col-sm-3">Дата отправки</dt>
+                <dd class="col-sm-9">@Model.SubmittedAt.ToString("dd.MM.yyyy HH:mm")</dd>
+            </dl>
+
+            <a asp-action="Index" class="btn btn-primary mt-3">Заполнить новую заявку</a>
+        </div>
+    </div>
+</div>
