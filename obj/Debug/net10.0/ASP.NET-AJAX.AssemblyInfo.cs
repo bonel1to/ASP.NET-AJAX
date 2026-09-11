@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ASP.NET-AJAX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43920c7111182042b06c75a21051822e961200d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8d8cf99765c13dee6b05225457fc5b59069d7a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASP.NET-AJAX")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ASP.NET-AJAX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
